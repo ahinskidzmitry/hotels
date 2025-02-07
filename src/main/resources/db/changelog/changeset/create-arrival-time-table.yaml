@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-arrival-time-table
+      author: Dzmitry Ahinski
+      changes:
+        - createTable:
+            tableName: arrival_time
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: checkIn
+                  type: time
+                  constraints:
+                    nullable: false
+              - column:
+                  name: checkOut
+                  type: time

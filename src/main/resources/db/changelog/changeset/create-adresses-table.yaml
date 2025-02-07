@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-adresses-table
+      author: Dzmitry Ahinski
+      changes:
+        - createTable:
+            tableName: adresses
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: houseNumber
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: street
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: postCode
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
