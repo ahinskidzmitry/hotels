@@ -13,10 +13,10 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: checkIn
+                  name: check_in
                   type: time
                   constraints:
                     nullable: false
               - column:
-                  name: checkOut
+                  name: check_out
                   type: time

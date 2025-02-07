@@ -13,7 +13,7 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: houseNumber
+                  name: house_number
                   type: integer
                   constraints:
                     nullable: false
@@ -33,7 +33,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: postCode
+                  name: post_code
                   type: varchar(255)
                   constraints:
                     nullable: false
