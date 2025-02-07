@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 import com.ahinski.hotels.model.Hotel;
 
 @Repository
-public interface HotelRepository extends JpaRepository<Hotel, Long> {}
+public interface HotelsRepository extends JpaRepository<Hotel, Long> {}
