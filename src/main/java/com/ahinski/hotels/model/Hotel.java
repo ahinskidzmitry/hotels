@@ -41,7 +41,7 @@ public class Hotel {
     @JoinColumn(name = "arrival_time_id", referencedColumnName = "id")
     private ArrivalTime arrivalTime;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name = "hotels_amenities",
         joinColumns = @JoinColumn(name = "hotel_id"),

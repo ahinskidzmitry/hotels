@@ -24,13 +24,13 @@ public class HotelDto {
     private ArrivalTimeDto arrivalTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private List<AmenityDto> amenities;
+    private List<String> amenities;
 
 
     public HotelDto() {}
 
     public HotelDto(Long id, String name, String description, String brand, AddressDto address, ContactsDto contacts,
-            ArrivalTimeDto arrivalTime, List<AmenityDto> amenities) {
+            ArrivalTimeDto arrivalTime, List<String> amenities) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -97,11 +97,11 @@ public class HotelDto {
         this.arrivalTime = arrivalTime;
     }
 
-    public List<AmenityDto> getAmenities() {
+    public List<String> getAmenities() {
         return amenities;
     }
 
-    public void setAmenities(List<AmenityDto> amenities) {
+    public void setAmenities(List<String> amenities) {
         this.amenities = amenities;
     }
 

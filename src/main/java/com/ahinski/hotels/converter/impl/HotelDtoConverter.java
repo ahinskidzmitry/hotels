@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.dto.AddressDto;
-import com.ahinski.hotels.dto.AmenityDto;
 import com.ahinski.hotels.dto.ArrivalTimeDto;
 import com.ahinski.hotels.dto.ContactsDto;
 import com.ahinski.hotels.dto.HotelDto;
@@ -22,7 +21,6 @@ public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
     private final AddressDtoConverter addressDtoConverter = new AddressDtoConverter();
     private final ContactsDtoConverter contactsDtoConverter = new ContactsDtoConverter();
     private final ArrivalTimeDtoConverter arrivalTimeDtoConverter = new ArrivalTimeDtoConverter();
-    private final AmenityDtoConverter amenityDtoConverter = new AmenityDtoConverter();
 
     @Override
     public HotelDto convertToDto(Hotel entity) {
@@ -42,11 +40,8 @@ public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
         hotelDto.setArrivalTime(arrivalTimeDto);
 
         if (!entity.getAmenities().isEmpty()) {
-            List<AmenityDto> amenityDtos = entity.getAmenities()
-                                            .stream()
-                                            .map(amenity -> amenityDtoConverter.convertToDto(amenity))
-                                            .toList();
-            hotelDto.setAmenities(amenityDtos);
+            List<String> amenities = entity.getAmenities().stream().map(Amenity::getName).toList();
+            hotelDto.setAmenities(amenities);
         }
 
         return hotelDto;
@@ -69,15 +64,7 @@ public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
 
         ArrivalTime arrivalTime = arrivalTimeDtoConverter.convertToEntity(dto.getArrivalTime());
         hotel.setArrivalTime(arrivalTime);
-
-        if (dto.getAmenities() != null) {
-            List<Amenity> amenities = dto.getAmenities()
-                                    .stream()
-                                    .map(amenityDto -> amenityDtoConverter.convertToEntity(amenityDto))
-                                    .toList();
-            hotel.setAmenities(amenities);
-        }
-
+        
         return hotel;
     }
 }
