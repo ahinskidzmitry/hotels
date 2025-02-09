@@ -10,7 +10,9 @@ import com.ahinski.hotels.service.HotelsService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
@@ -22,6 +24,12 @@ public class HotelController {
     public HotelController(HotelsService hotelsService) {
         this.hotelsService = hotelsService;
     }
+
+    @GetMapping("/hotels")
+    public List<BriefHotelDto> getBriefHotels() {
+        return hotelsService.findAll();
+    }
+    
     
     @PostMapping("/hotels")
     public BriefHotelDto saveHotel(@RequestBody HotelDto hotelDto) {

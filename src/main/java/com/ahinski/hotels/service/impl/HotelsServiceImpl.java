@@ -1,5 +1,7 @@
 package com.ahinski.hotels.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.ahinski.hotels.converter.DtoConverter;
@@ -25,6 +27,14 @@ public class HotelsServiceImpl implements HotelsService {
         this.hotelDtoConverter = hotelDtoConverter;
         this.briefHotelToDtoConverter = briefHotelToDtoConverter;
         this.dtoValidationChain = dtoValidationChain;
+    }
+
+    @Override
+    public List<BriefHotelDto> findAll() {
+        return hotelsRepository.findAll()
+                                .stream()
+                                .map(hotel -> briefHotelToDtoConverter.convertToDto(hotel))
+                                .toList();
     }
 
     @Override
