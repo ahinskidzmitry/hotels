@@ -2,10 +2,13 @@ package com.ahinski.hotels.dto;
 
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class ArrivalTimeDto {
     
     private LocalTime checkIn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private LocalTime checkOut;
 
     public LocalTime getCheckIn() {
