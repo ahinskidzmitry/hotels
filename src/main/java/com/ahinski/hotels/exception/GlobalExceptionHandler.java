@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     
-    @ExceptionHandler
+    @ExceptionHandler(ValidationException.class)
     public ResponseEntity<String> handleValidationExceptions(final ValidationException validationException) {
         return new ResponseEntity<>(validationException.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(HotelDoesNotExistException.class)
+    public ResponseEntity<String> handleHotelDoesNotExistExceptions(final HotelDoesNotExistException hotelDoesNotExistException) {
+        return new ResponseEntity<>(hotelDoesNotExistException.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

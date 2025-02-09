@@ -9,5 +9,7 @@ public interface HotelsService {
 
     List<BriefHotelDto> findAll();
 
+    HotelDto findById(Long id);
+
     BriefHotelDto save(HotelDto hotelDto);
 }

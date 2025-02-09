@@ -8,6 +8,7 @@ import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.converter.EntityToDtoConverter;
 import com.ahinski.hotels.dto.BriefHotelDto;
 import com.ahinski.hotels.dto.HotelDto;
+import com.ahinski.hotels.exception.HotelDoesNotExistException;
 import com.ahinski.hotels.model.Hotel;
 import com.ahinski.hotels.repository.HotelsRepository;
 import com.ahinski.hotels.service.HotelsService;
@@ -35,6 +36,15 @@ public class HotelsServiceImpl implements HotelsService {
                                 .stream()
                                 .map(hotel -> briefHotelToDtoConverter.convertToDto(hotel))
                                 .toList();
+    }
+
+    @Override
+    public HotelDto findById(Long id) {
+        return hotelDtoConverter.convertToDto(
+            hotelsRepository.findById(id).orElseThrow(
+                () -> new HotelDoesNotExistException(String.format("Hotel with ID %d does not exist", id))
+            )
+        );
     }
 
     @Override

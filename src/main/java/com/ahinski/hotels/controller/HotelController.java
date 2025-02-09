@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -26,10 +27,14 @@ public class HotelController {
     }
 
     @GetMapping("/hotels")
-    public List<BriefHotelDto> getBriefHotels() {
+    public List<BriefHotelDto> findBriefHotels() {
         return hotelsService.findAll();
     }
-    
+
+    @GetMapping("/hotels/{id}")
+    public HotelDto findHotelById(@PathVariable Long id) {
+        return hotelsService.findById(id);
+    }
     
     @PostMapping("/hotels")
     public BriefHotelDto saveHotel(@RequestBody HotelDto hotelDto) {
