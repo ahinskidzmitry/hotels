@@ -40,4 +40,9 @@ public class HotelController {
     public BriefHotelDto saveHotel(@RequestBody HotelDto hotelDto) {
         return hotelsService.save(hotelDto);
     }
+
+    @PostMapping("/hotels/{id}/amenities")
+    public HotelDto updateHotelAmenities(@PathVariable Long id, @RequestBody List<String> amenities) {
+        return hotelsService.updateAmenities(id, amenities);
+    }
 }

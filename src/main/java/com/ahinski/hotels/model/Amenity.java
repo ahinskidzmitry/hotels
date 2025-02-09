@@ -18,6 +18,13 @@ public class Amenity {
 
     private String name;
 
+    public Amenity() {
+    }
+
+    public Amenity(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }

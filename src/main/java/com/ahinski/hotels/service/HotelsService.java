@@ -12,4 +12,6 @@ public interface HotelsService {
     HotelDto findById(Long id);
 
     BriefHotelDto save(HotelDto hotelDto);
+
+    HotelDto updateAmenities(Long id, List<String> amenities);
 }
