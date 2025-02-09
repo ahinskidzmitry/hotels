@@ -1,8 +1,9 @@
-package com.ahinski.hotels.validator;
+package com.ahinski.hotels.validator.impl;
 
 import com.ahinski.hotels.dto.ArrivalTimeDto;
 import com.ahinski.hotels.dto.HotelDto;
 import com.ahinski.hotels.exception.ValidationException;
+import com.ahinski.hotels.validator.DtoValidationStep;
 
 public class ArrivalTimeValidationStep implements DtoValidationStep<HotelDto> {
 

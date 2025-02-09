@@ -3,6 +3,10 @@ package com.ahinski.hotels.validator;
 import org.springframework.stereotype.Component;
 
 import com.ahinski.hotels.dto.HotelDto;
+import com.ahinski.hotels.validator.impl.AddressValidationStep;
+import com.ahinski.hotels.validator.impl.ArrivalTimeValidationStep;
+import com.ahinski.hotels.validator.impl.ContactsValidationStep;
+import com.ahinski.hotels.validator.impl.HotelValidationStep;
 
 @Component
 public class DtoValidationChain {
