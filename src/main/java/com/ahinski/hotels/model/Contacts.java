@@ -1,12 +1,19 @@
 package com.ahinski.hotels.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "contacts")
 public class Contacts {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CONTACTS_SEQ")
+    @SequenceGenerator(name = "CONTACTS_SEQ", sequenceName = "CONTACTS_SEQ", allocationSize = 1)
     private Long id;
 
     private String phone;

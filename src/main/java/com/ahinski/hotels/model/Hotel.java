@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,7 +19,8 @@ import jakarta.persistence.Table;
 public class Hotel {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "HOTELS_SEQ")
+    @SequenceGenerator(name = "HOTELS_SEQ", sequenceName = "HOTELS_SEQ", allocationSize = 1)
     private Long id;
 
     private String name;
@@ -28,8 +30,8 @@ public class Hotel {
     private String brand;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "adress_id", referencedColumnName = "id")
-    private Adress adress;
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
@@ -63,8 +65,8 @@ public class Hotel {
         return brand;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAddress() {
+        return address;
     }
 
     public Contacts getContacts() {
@@ -95,8 +97,8 @@ public class Hotel {
         this.brand = brand;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public void setContacts(Contacts contacts) {
@@ -119,7 +121,7 @@ public class Hotel {
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((description == null) ? 0 : description.hashCode());
         result = prime * result + ((brand == null) ? 0 : brand.hashCode());
-        result = prime * result + ((adress == null) ? 0 : adress.hashCode());
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
         result = prime * result + ((contacts == null) ? 0 : contacts.hashCode());
         result = prime * result + ((arrivalTime == null) ? 0 : arrivalTime.hashCode());
         result = prime * result + ((amenities == null) ? 0 : amenities.hashCode());
@@ -155,10 +157,10 @@ public class Hotel {
                 return false;
         } else if (!brand.equals(other.brand))
             return false;
-        if (adress == null) {
-            if (other.adress != null)
+        if (address == null) {
+            if (other.address != null)
                 return false;
-        } else if (!adress.equals(other.adress))
+        } else if (!address.equals(other.address))
             return false;
         if (contacts == null) {
             if (other.contacts != null)
@@ -180,9 +182,7 @@ public class Hotel {
 
     @Override
     public String toString() {
-        return "Hotel [id=" + id + ", name=" + name + ", description=" + description + ", brand=" + brand + ", adress="
-                + adress + ", contacts=" + contacts + ", arrivalTime=" + arrivalTime + ", amenities=" + amenities + "]";
+        return "Hotel [id=" + id + ", name=" + name + ", description=" + description + ", brand=" + brand + ", address="
+                + address + ", contacts=" + contacts + ", arrivalTime=" + arrivalTime + ", amenities=" + amenities + "]";
     }
-
-    
 }

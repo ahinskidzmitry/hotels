@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-adresses-table
+      id: create-addresses-table
       author: Dzmitry Ahinski
       changes:
         - createTable:
-            tableName: adresses
+            tableName: addresses
             columns:
               - column:
                   name: id

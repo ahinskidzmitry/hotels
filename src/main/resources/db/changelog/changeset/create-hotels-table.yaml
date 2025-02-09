@@ -28,7 +28,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: adress_id
+                  name: address_id
                   type: bigint
                   constraints:
                     nullable: false
@@ -47,10 +47,10 @@ databaseChangeLog:
                     unique: true
         - addForeignKeyConstraint:
             baseTableName: hotels
-            baseColumnNames: adress_id
-            referencedTableName: adresses
+            baseColumnNames: address_id
+            referencedTableName: addresses
             referencedColumnNames: id
-            constraintName: adress_id_fk
+            constraintName: address_id_fk
         - addForeignKeyConstraint:
             baseTableName: hotels
             baseColumnNames: contact_id

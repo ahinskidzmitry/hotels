@@ -5,14 +5,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "adresses")
-public class Adress {
+@Table(name = "addresses")
+public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ADDRESSES_SEQ")
+    @SequenceGenerator(name = "ADDRESSES_SEQ", sequenceName = "ADDRESSES_SEQ", allocationSize = 1)
     private Long id;
     
     @Column(name = "house_number")
@@ -96,7 +98,7 @@ public class Adress {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Adress other = (Adress) obj;
+        Address other = (Address) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -132,7 +134,7 @@ public class Adress {
 
     @Override
     public String toString() {
-        return "Adress [id=" + id + ", houseNumber=" + houseNumber + ", street=" + street + ", city=" + city
+        return "Address [id=" + id + ", houseNumber=" + houseNumber + ", street=" + street + ", city=" + city
                 + ", country=" + country + ", postCode=" + postCode + "]";
     }
 }

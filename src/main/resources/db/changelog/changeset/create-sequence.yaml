@@ -1,0 +1,15 @@
+databaseChangeLog:
+    - changeSet:
+        id: create-sequence
+        author: Dzmitry Ahinski
+        changes:
+          - createSequence:
+              sequenceName: AMENITIES_SEQ
+          - createSequence:
+              sequenceName: ARRIVAL_TIME_SEQ
+          - createSequence:
+              sequenceName: CONTACTS_SEQ
+          - createSequence:
+              sequenceName: ADDRESSES_SEQ
+          - createSequence:
+              sequenceName: HOTELS_SEQ
