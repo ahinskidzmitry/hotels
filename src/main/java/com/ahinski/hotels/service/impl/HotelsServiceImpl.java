@@ -1,6 +1,7 @@
 package com.ahinski.hotels.service.impl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -56,6 +57,16 @@ public class HotelsServiceImpl implements HotelsService {
     }
 
     @Override
+    public List<BriefHotelDto> findAllByCriteria(String name, String brand, String city, String country,
+                                                 List<String> amenities) {
+        
+        return hotelsRepository.findAllByCriteria(name, brand, city, country, amenities)
+                                .stream()
+                                .map(briefHotelToDtoConverter::convertToDto)
+                                .toList();
+    }
+
+    @Override
     public BriefHotelDto save(HotelDto hotelDto) {
         dtoValidationChain.validate(hotelDto);
         Hotel hotel = hotelDtoConverter.convertToEntity(hotelDto);
@@ -82,5 +93,20 @@ public class HotelsServiceImpl implements HotelsService {
         hotel.setAmenities(existingAmenities);
 
         return hotelDtoConverter.convertToDto(hotelsRepository.save(hotel));
+    }
+ 
+    @Override
+    public Map<String, Long> countByParameters(String param) {
+        
+        List<Object[]> groupsByBrandList = switch (param) {
+            case "brand" -> hotelsRepository.countByBrand();
+            case "city" -> hotelsRepository.countByCity();
+            case "country" -> hotelsRepository.countByCountry();
+            case "amenities" -> hotelsRepository.countByAmenities();
+            default -> throw new IllegalArgumentException(String.format("Argument %s is not valid", param));
+        };
+
+        Map<String, Long> groupsByBrandMap = groupsByBrandList.stream().collect(Collectors.toMap(arr -> (String) arr[0], arr -> (Long) arr[1]));
+        return groupsByBrandMap;
     }
 }

@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -35,6 +38,16 @@ public class HotelController {
     public HotelDto findHotelById(@PathVariable Long id) {
         return hotelsService.findById(id);
     }
+
+    @GetMapping("/search")
+    public List<BriefHotelDto> findHotelsByCriteria(@RequestParam(required = false) String name, 
+                                                    @RequestParam(required = false) String brand, 
+                                                    @RequestParam(required = false) String city, 
+                                                    @RequestParam(required = false) String country, 
+                                                    @RequestParam(required = false) List<String> amenities) {
+        return hotelsService.findAllByCriteria(name, brand, city, country, amenities);
+    }
+    
     
     @PostMapping("/hotels")
     public BriefHotelDto saveHotel(@RequestBody HotelDto hotelDto) {
@@ -45,4 +58,10 @@ public class HotelController {
     public HotelDto updateHotelAmenities(@PathVariable Long id, @RequestBody List<String> amenities) {
         return hotelsService.updateAmenities(id, amenities);
     }
+
+    @GetMapping("/histogram/{param}")
+    public Map<String, Long> countByParameters(@PathVariable String param) {
+        return hotelsService.countByParameters(param);
+    }
+    
 }
