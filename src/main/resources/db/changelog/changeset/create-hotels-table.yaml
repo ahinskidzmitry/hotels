@@ -21,7 +21,7 @@ databaseChangeLog:
                   name: description
                   type: varchar(1000)
                   constraints:
-                    nullable: false
+                    nullable: true
               - column:
                   name: brand
                   type: varchar(255)
