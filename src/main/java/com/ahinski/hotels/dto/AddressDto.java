@@ -106,6 +106,4 @@ public class AddressDto {
         return "AddressDto [houseNumber=" + houseNumber + ", street=" + street + ", city=" + city + ", country="
                 + country + ", postCode=" + postCode + "]";
     }
-
-    
 }

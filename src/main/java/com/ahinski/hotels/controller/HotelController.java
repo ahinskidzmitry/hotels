@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-
 @RestController
 @RequestMapping("/property-view")
 public class HotelController {
@@ -62,6 +61,5 @@ public class HotelController {
     @GetMapping("/histogram/{param}")
     public Map<String, Long> countByParameters(@PathVariable String param) {
         return hotelsService.countByParameters(param);
-    }
-    
+    } 
 }

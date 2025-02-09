@@ -26,7 +26,6 @@ public class HotelDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<String> amenities;
 
-
     public HotelDto() {}
 
     public HotelDto(Long id, String name, String description, String brand, AddressDto address, ContactsDto contacts,
