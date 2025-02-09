@@ -33,7 +33,9 @@ public class AddressValidationStep implements DtoValidationStep<HotelDto> {
             throw new ValidationException("Post code must be provided");
         }
 
-        next.validate(dto);
+        if (next != null) {
+            next.validate(dto);
+        }
     }
 
     @Override

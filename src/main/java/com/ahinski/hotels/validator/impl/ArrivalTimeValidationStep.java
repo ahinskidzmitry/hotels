@@ -17,7 +17,9 @@ public class ArrivalTimeValidationStep implements DtoValidationStep<HotelDto> {
             throw new ValidationException("Check in must be provided");
         }
 
-        next.validate(dto);
+        if (next != null) {
+            next.validate(dto);
+        }
     }
 
     @Override

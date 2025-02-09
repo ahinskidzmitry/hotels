@@ -21,7 +21,9 @@ public class ContactsValidationStep implements DtoValidationStep<HotelDto> {
             throw new ValidationException("Phone number must be provided");
         }
 
-        next.validate(dto);
+        if (next != null) {
+            next.validate(dto);
+        }
     }
 
     @Override
