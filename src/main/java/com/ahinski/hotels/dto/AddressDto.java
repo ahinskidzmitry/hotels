@@ -1,6 +1,6 @@
 package com.ahinski.hotels.dto;
 
-public class AdressDto {
+public class AddressDto {
     
     private Integer houseNumber;
 
@@ -72,7 +72,7 @@ public class AdressDto {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        AdressDto other = (AdressDto) obj;
+        AddressDto other = (AddressDto) obj;
         if (houseNumber == null) {
             if (other.houseNumber != null)
                 return false;
@@ -103,7 +103,7 @@ public class AdressDto {
 
     @Override
     public String toString() {
-        return "AdressDto [houseNumber=" + houseNumber + ", street=" + street + ", city=" + city + ", country="
+        return "AddressDto [houseNumber=" + houseNumber + ", street=" + street + ", city=" + city + ", country="
                 + country + ", postCode=" + postCode + "]";
     }
 

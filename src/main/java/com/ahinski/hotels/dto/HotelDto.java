@@ -1,5 +1,6 @@
 package com.ahinski.hotels.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HotelDto {
@@ -8,15 +9,32 @@ public class HotelDto {
 
     private String name;
 
+    private String description;
+
     private String brand;
 
-    private AdressDto adress;
+    private AddressDto address;
 
     private ContactsDto contacts;
 
     private ArrivalTimeDto arrivalTime;
 
-    private List<AmenityDto> amenities;
+    private List<AmenityDto> amenities = new ArrayList<>();
+
+
+    public HotelDto() {}
+
+    public HotelDto(Long id, String name, String description, String brand, AddressDto address, ContactsDto contacts,
+            ArrivalTimeDto arrivalTime, List<AmenityDto> amenities) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.brand = brand;
+        this.address = address;
+        this.contacts = contacts;
+        this.arrivalTime = arrivalTime;
+        this.amenities = amenities;
+    }
 
     public Long getId() {
         return id;
@@ -34,6 +52,14 @@ public class HotelDto {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -42,12 +68,12 @@ public class HotelDto {
         this.brand = brand;
     }
 
-    public AdressDto getAdress() {
-        return adress;
+    public AddressDto getAddress() {
+        return address;
     }
 
-    public void setAdress(AdressDto adress) {
-        this.adress = adress;
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 
     public ContactsDto getContacts() {
@@ -80,8 +106,9 @@ public class HotelDto {
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((description == null) ? 0 : description.hashCode());
         result = prime * result + ((brand == null) ? 0 : brand.hashCode());
-        result = prime * result + ((adress == null) ? 0 : adress.hashCode());
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
         result = prime * result + ((contacts == null) ? 0 : contacts.hashCode());
         result = prime * result + ((arrivalTime == null) ? 0 : arrivalTime.hashCode());
         result = prime * result + ((amenities == null) ? 0 : amenities.hashCode());
@@ -107,15 +134,20 @@ public class HotelDto {
                 return false;
         } else if (!name.equals(other.name))
             return false;
+        if (description == null) {
+            if (other.description != null)
+                return false;
+        } else if (!description.equals(other.description))
+            return false;
         if (brand == null) {
             if (other.brand != null)
                 return false;
         } else if (!brand.equals(other.brand))
             return false;
-        if (adress == null) {
-            if (other.adress != null)
+        if (address == null) {
+            if (other.address != null)
                 return false;
-        } else if (!adress.equals(other.adress))
+        } else if (!address.equals(other.address))
             return false;
         if (contacts == null) {
             if (other.contacts != null)
@@ -137,7 +169,8 @@ public class HotelDto {
 
     @Override
     public String toString() {
-        return "HotelDto [id=" + id + ", name=" + name + ", brand=" + brand + ", adress=" + adress + ", contacts="
-                + contacts + ", arrivalTime=" + arrivalTime + ", amenities=" + amenities + "]";
+        return "HotelDto [id=" + id + ", name=" + name + ", description=" + description + ", brand=" + brand
+                + ", address=" + address + ", contacts=" + contacts + ", arrivalTime=" + arrivalTime + ", amenities="
+                + amenities + "]";
     }
 }

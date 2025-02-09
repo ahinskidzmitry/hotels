@@ -8,7 +8,7 @@ public class BriefHotelDto {
 
     private String description;
 
-    private String adress;
+    private String address;
 
     private String phone;
 
@@ -24,8 +24,8 @@ public class BriefHotelDto {
         return description;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     public String getPhone() {
@@ -44,8 +44,8 @@ public class BriefHotelDto {
         this.description = description;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public void setPhone(String phone) {
@@ -59,7 +59,7 @@ public class BriefHotelDto {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((adress == null) ? 0 : adress.hashCode());
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
         result = prime * result + ((phone == null) ? 0 : phone.hashCode());
         return result;
     }
@@ -88,10 +88,10 @@ public class BriefHotelDto {
                 return false;
         } else if (!description.equals(other.description))
             return false;
-        if (adress == null) {
-            if (other.adress != null)
+        if (address == null) {
+            if (other.address != null)
                 return false;
-        } else if (!adress.equals(other.adress))
+        } else if (!address.equals(other.address))
             return false;
         if (phone == null) {
             if (other.phone != null)
@@ -103,7 +103,7 @@ public class BriefHotelDto {
 
     @Override
     public String toString() {
-        return "BriefHotelDto [id=" + id + ", name=" + name + ", description=" + description + ", adress=" + adress
+        return "BriefHotelDto [id=" + id + ", name=" + name + ", description=" + description + ", address=" + address
                 + ", phone=" + phone + "]";
     }
 }
