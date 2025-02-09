@@ -35,9 +35,9 @@ public class BriefHotelToDtoConverter implements EntityToDtoConverter<Hotel, Bri
         addressBuilder.append(WHITESPACE_WITH_COMMA);
         addressBuilder.append(address.getCity());
         addressBuilder.append(WHITESPACE_WITH_COMMA);
-        addressBuilder.append(address.getCity());
-        addressBuilder.append(WHITESPACE_WITH_COMMA);
         addressBuilder.append(address.getCountry());
+        addressBuilder.append(WHITESPACE_WITH_COMMA);
+        addressBuilder.append(address.getPostCode());
 
         return addressBuilder.toString();
     }
