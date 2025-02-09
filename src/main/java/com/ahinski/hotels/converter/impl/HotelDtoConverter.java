@@ -41,11 +41,13 @@ public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
         ArrivalTimeDto arrivalTimeDto = arrivalTimeDtoConverter.convertToDto(entity.getArrivalTime());
         hotelDto.setArrivalTime(arrivalTimeDto);
 
-        List<AmenityDto> amenityDtos = entity.getAmenities()
+        if (!entity.getAmenities().isEmpty()) {
+            List<AmenityDto> amenityDtos = entity.getAmenities()
                                             .stream()
                                             .map(amenity -> amenityDtoConverter.convertToDto(amenity))
                                             .toList();
-        hotelDto.setAmenities(amenityDtos);
+            hotelDto.setAmenities(amenityDtos);
+        }
 
         return hotelDto;
     } 
@@ -68,11 +70,13 @@ public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
         ArrivalTime arrivalTime = arrivalTimeDtoConverter.convertToEntity(dto.getArrivalTime());
         hotel.setArrivalTime(arrivalTime);
 
-        List<Amenity> amenities = dto.getAmenities()
+        if (dto.getAmenities() != null) {
+            List<Amenity> amenities = dto.getAmenities()
                                     .stream()
                                     .map(amenityDto -> amenityDtoConverter.convertToEntity(amenityDto))
                                     .toList();
-        hotel.setAmenities(amenities);
+            hotel.setAmenities(amenities);
+        }
 
         return hotel;
     }
