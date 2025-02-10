@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-hotels-table
+      author: Dzmitry Ahinski
+      changes:
+        - createTable:
+            tableName: hotels
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(1000)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: brand
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: contact_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: arrival_time_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    unique: true
+        - addForeignKeyConstraint:
+            baseTableName: hotels
+            baseColumnNames: address_id
+            referencedTableName: addresses
+            referencedColumnNames: id
+            constraintName: address_id_fk
+        - addForeignKeyConstraint:
+            baseTableName: hotels
+            baseColumnNames: contact_id
+            referencedTableName: contacts
+            referencedColumnNames: id
+            constraintName: contact_id_fk
+        - addForeignKeyConstraint:
+            baseTableName: hotels
+            baseColumnNames: arrival_time_id
+            referencedTableName: arrival_time
+            referencedColumnNames: id
+            constraintName: arrival_time_id_fk

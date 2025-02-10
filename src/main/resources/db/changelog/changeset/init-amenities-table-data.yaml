@@ -1,0 +1,96 @@
+databaseChangeLog:
+  - changeSet:
+      id: init-amenities-table-data
+      author: Dzmitry Ahinski
+      changes:
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: Free parking
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: Free WiFi
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: Non-smoking rooms
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: Consierge
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: On-site restaurant
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 6
+              - column:
+                  name: name
+                  value: Fitness center
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 7
+              - column:
+                  name: name
+                  value: Pet-friendly rooms
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 8
+              - column:
+                  name: name
+                  value: Room service
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 9
+              - column:
+                  name: name
+                  value: Business center
+        - insert:
+            tableName: amenities
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 10
+              - column:
+                  name: name
+                  value: Meeting rooms
+
