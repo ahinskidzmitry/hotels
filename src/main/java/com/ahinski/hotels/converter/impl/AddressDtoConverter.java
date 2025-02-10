@@ -4,6 +4,7 @@ import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.dto.AddressDto;
 import com.ahinski.hotels.model.Address;
 
+
 class AddressDtoConverter implements DtoConverter<Address, AddressDto> {
 
     @Override

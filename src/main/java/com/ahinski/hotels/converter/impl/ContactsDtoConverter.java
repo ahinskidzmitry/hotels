@@ -4,6 +4,7 @@ import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.dto.ContactsDto;
 import com.ahinski.hotels.model.Contacts;
 
+
 class ContactsDtoConverter implements DtoConverter<Contacts, ContactsDto> {
 
     @Override

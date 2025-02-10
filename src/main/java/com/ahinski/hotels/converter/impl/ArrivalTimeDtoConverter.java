@@ -4,6 +4,7 @@ import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.dto.ArrivalTimeDto;
 import com.ahinski.hotels.model.ArrivalTime;
 
+
 class ArrivalTimeDtoConverter implements DtoConverter<ArrivalTime, ArrivalTimeDto> {
 
     @Override

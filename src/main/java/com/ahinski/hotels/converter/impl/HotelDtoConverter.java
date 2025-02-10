@@ -15,6 +15,7 @@ import com.ahinski.hotels.model.ArrivalTime;
 import com.ahinski.hotels.model.Contacts;
 import com.ahinski.hotels.model.Hotel;
 
+
 @Component
 public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
 

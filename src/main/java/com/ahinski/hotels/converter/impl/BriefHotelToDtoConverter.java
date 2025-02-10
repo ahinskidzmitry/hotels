@@ -7,6 +7,7 @@ import com.ahinski.hotels.dto.BriefHotelDto;
 import com.ahinski.hotels.model.Address;
 import com.ahinski.hotels.model.Hotel;
 
+
 @Component
 public class BriefHotelToDtoConverter implements EntityToDtoConverter<Hotel, BriefHotelDto> {
 
