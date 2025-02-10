@@ -2,8 +2,6 @@ databaseChangeLog:
   - include:
       file: db/changelog/changeset/create-amenities-table.yaml
   - include:
-      file: db/changelog/changeset/init-amenities-table-data.yaml
-  - include:
       file: db/changelog/changeset/create-arrival-time-table.yaml
   - include:
       file: db/changelog/changeset/create-contacts-table.yaml
@@ -15,3 +13,5 @@ databaseChangeLog:
       file: db/changelog/changeset/create-hotels-amenities-table.yaml
   - include:
       file: db/changelog/changeset/create-sequence.yaml
+  - include:
+      file: db/changelog/changeset/init-amenities-table-data.yaml

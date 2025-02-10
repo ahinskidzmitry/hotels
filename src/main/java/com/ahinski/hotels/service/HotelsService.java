@@ -18,5 +18,5 @@ public interface HotelsService {
 
     HotelDto updateAmenities(Long id, List<String> amenities);
 
-    Map<String, Long> countByParameters(String param);
+    Map<String, Long> countByParameter(String param);
 }

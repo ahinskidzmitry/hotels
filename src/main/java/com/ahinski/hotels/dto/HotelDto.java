@@ -3,8 +3,6 @@ package com.ahinski.hotels.dto;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 public class HotelDto {
     
@@ -12,7 +10,7 @@ public class HotelDto {
 
     private String name;
 
-    @JsonProperty(access = Access.WRITE_ONLY)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String description;
 
     private String brand;

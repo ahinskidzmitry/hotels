@@ -5,6 +5,7 @@ databaseChangeLog:
         changes:
           - createSequence:
               sequenceName: AMENITIES_SEQ
+              startValue: 11
           - createSequence:
               sequenceName: ARRIVAL_TIME_SEQ
           - createSequence:

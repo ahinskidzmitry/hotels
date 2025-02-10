@@ -27,6 +27,7 @@ public class HotelDtoConverter implements DtoConverter<Hotel, HotelDto> {
         HotelDto hotelDto = new HotelDto();
 
         hotelDto.setId(entity.getId());
+        hotelDto.setDescription(entity.getDescription());
         hotelDto.setName(entity.getName());
         hotelDto.setBrand(entity.getBrand());
         

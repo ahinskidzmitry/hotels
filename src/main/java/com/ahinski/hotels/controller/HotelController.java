@@ -47,7 +47,6 @@ public class HotelController {
         return hotelsService.findAllByCriteria(name, brand, city, country, amenities);
     }
     
-    
     @PostMapping("/hotels")
     public BriefHotelDto saveHotel(@RequestBody HotelDto hotelDto) {
         return hotelsService.save(hotelDto);
@@ -59,7 +58,7 @@ public class HotelController {
     }
 
     @GetMapping("/histogram/{param}")
-    public Map<String, Long> countByParameters(@PathVariable String param) {
-        return hotelsService.countByParameters(param);
+    public Map<String, Long> countByParameter(@PathVariable String param) {
+        return hotelsService.countByParameter(param);
     } 
 }

@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.converter.EntityToDtoConverter;
@@ -60,7 +61,9 @@ public class HotelsServiceImpl implements HotelsService {
     public List<BriefHotelDto> findAllByCriteria(String name, String brand, String city, String country,
                                                  List<String> amenities) {
         
-        return hotelsRepository.findAllByCriteria(name, brand, city, country, amenities)
+        List<String> lowerCaseAmenities = amenities.stream().map(String::toLowerCase).toList();                                 
+        
+        return hotelsRepository.findAllByCriteria(name, brand, city, country, lowerCaseAmenities)
                                 .stream()
                                 .map(briefHotelToDtoConverter::convertToDto)
                                 .toList();
@@ -96,8 +99,7 @@ public class HotelsServiceImpl implements HotelsService {
     }
  
     @Override
-    public Map<String, Long> countByParameters(String param) {
-        
+    public Map<String, Long> countByParameter(String param) {
         List<Object[]> groupsByBrandList = switch (param) {
             case "brand" -> hotelsRepository.countByBrand();
             case "city" -> hotelsRepository.countByCity();
