@@ -6,7 +6,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import com.ahinski.hotels.converter.DtoConverter;
 import com.ahinski.hotels.converter.EntityToDtoConverter;
