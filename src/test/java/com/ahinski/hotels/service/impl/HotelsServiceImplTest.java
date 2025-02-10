@@ -216,7 +216,6 @@ public class HotelsServiceImplTest {
         when(hotelDtoConverter.convertToEntity(hotelDtos.get(0))).thenReturn(hotelEntities.get(0));
         when(briefHotelDtoConverter.convertToDto(hotelEntities.get(0))).thenReturn(briefHotelDtos.get(0));
 
-
         BriefHotelDto briefHotelDto = hotelsService.save(hotelDtos.get(0));
 
         assertNotNull(briefHotelDto);
