@@ -14,6 +14,12 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+/**
+ * Hotel model
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Entity
 @Table(name = "hotels")
 public class Hotel {

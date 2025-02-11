@@ -8,6 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import com.ahinski.hotels.model.Hotel;
 
+/**
+ * Amenities Repository for managing hotel models
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Repository
 public interface HotelsRepository extends JpaRepository<Hotel, Long> {
 

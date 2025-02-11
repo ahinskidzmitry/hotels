@@ -7,6 +7,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+/**
+ * Contacts model
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Entity
 @Table(name = "contacts")
 public class Contacts {

@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+/**
+ * Hotel data transfer object
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 public class HotelDto {
     
     private Long id;

@@ -21,6 +21,12 @@ import com.ahinski.hotels.validator.DtoValidationChain;
 
 import jakarta.transaction.Transactional;
 
+/**
+ * Hotels service implementation
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Service
 public class HotelsServiceImpl implements HotelsService {
     

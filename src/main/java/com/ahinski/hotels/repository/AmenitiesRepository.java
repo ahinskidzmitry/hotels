@@ -7,6 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import com.ahinski.hotels.model.Amenity;
 
+/**
+ * Amenities Repository for managing amenity models
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Repository
 public interface AmenitiesRepository extends JpaRepository<Amenity, Long> {
     

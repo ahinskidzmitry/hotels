@@ -8,6 +8,12 @@ import com.ahinski.hotels.validator.impl.ArrivalTimeValidationStep;
 import com.ahinski.hotels.validator.impl.ContactsValidationStep;
 import com.ahinski.hotels.validator.impl.HotelValidationStep;
 
+/**
+ * Head element of Chain of Responsibility pattern implementation to start hotel validation
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Component
 public class DtoValidationChain {
 

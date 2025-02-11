@@ -1,5 +1,11 @@
 package com.ahinski.hotels.dto;
 
+/**
+ * Address data transfer object
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 public class AddressDto {
     
     private Integer houseNumber;

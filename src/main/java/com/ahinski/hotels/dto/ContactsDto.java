@@ -1,5 +1,11 @@
 package com.ahinski.hotels.dto;
 
+/**
+ * Contacts data transfer object
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 public class ContactsDto {
     
     private String phone;
