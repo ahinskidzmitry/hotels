@@ -2,6 +2,12 @@ package com.ahinski.hotels.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+/**
+ * Brief hotel information data transfer object
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 public class BriefHotelDto {
     
     private Long id;

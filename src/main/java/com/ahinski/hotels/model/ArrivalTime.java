@@ -10,6 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+/**
+ * Arrival Time model
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 @Entity
 @Table(name = "arrival_time")
 public class ArrivalTime {

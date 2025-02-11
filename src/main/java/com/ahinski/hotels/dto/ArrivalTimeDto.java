@@ -4,6 +4,12 @@ import java.time.LocalTime;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+/**
+ * Arrival Time data transfer object
+ * 
+ * @author Dzmitry Ahinski
+ * 
+ */
 public class ArrivalTimeDto {
     
     private LocalTime checkIn;
